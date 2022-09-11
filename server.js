@@ -28,6 +28,29 @@ app.use(replyRoutes);
 app.use(userRoutes);
 app.use(commentsRoutes);
 
+/*app.get("/", (req, res) => {
+  res.send("hello");
+});*/
+
+const storage = multer.diskStorage({
+  destination: (req, res, cb) => {
+    cb(null, req.body.name);
+  },
+  filename: (req, file, cb) => {
+    cb(cb, req.body.name);
+  },
+});
+
+const upload = multer({ storage: storage });
+
+app.post("/api/upload", upload.single(file), (req, res) => {
+  try {
+    return res.status(200).json("file saved");
+  } catch (err) {
+    console.log(err);
+  }
+});
+
 const PORT = process.env.PORT;
 
 app.listen(PORT, () => {

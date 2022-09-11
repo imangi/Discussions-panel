@@ -1,0 +1,98 @@
+.proimg {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  left: 49px;
+  top: 205px;
+
+  background: url(image.png);
+  border-radius: 42.25px;
+}
+.comment {
+  position: absolute;
+  width: 684px;
+  height: 89px;
+  left: 49px;
+}
+.username {
+  position: absolute;
+  width: 62px;
+  height: 16px;
+  left: 90px;
+  top: 207px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 16px;
+  /* identical to box height */
+
+  color: #21293c;
+}
+.text {
+  position: absolute;
+  width: 643px;
+  height: 40px;
+  left: 90px;
+  top: 227px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 20px;
+
+  color: #21293c;
+}
+.icon {
+  position: absolute;
+  width: 9px;
+  height: 10px;
+  left: 90px;
+  top: 283px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 8px;
+  line-height: 10px;
+  /* identical to box height */
+
+  display: flex;
+  align-items: center;
+
+  color: #4b587c;
+}
+.upvotes {
+  position: absolute;
+  width: 39px;
+  height: 13px;
+  left: 106px;
+  top: 281px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 13px;
+  display: flex;
+  align-items: center;
+
+  color: #4b587c;
+}
+.reply {
+  position: absolute;
+  width: 30px;
+  height: 13px;
+  left: 173px;
+  top: 281px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 13px;
+
+  color: #4b587c;
+}
