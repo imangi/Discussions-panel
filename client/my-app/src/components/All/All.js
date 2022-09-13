@@ -1,8 +1,8 @@
 import axios from "axios";
 import React from "react";
 import { useState, useEffect } from "react";
-import Comment from "./Comment";
-import Reply from "./Reply";
+import Comment from "../comments/Comment";
+import Reply from "../Reply/Reply";
 
 export default function All() {
   const { user, setUser } = useState(null);

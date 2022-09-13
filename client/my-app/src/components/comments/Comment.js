@@ -2,11 +2,12 @@ import React from "react";
 import { useContext, useEffect, useState } from "react";
 import { IoCaretUpSharp } from "react-icons/fa";
 import axios from "axios";
-import { UserContext } from "../contexts/UserContext";
+import { UserContext } from "../../contexts/UserContext";
+import './Comments.css'
 
 //import All from "./All";
 
-import "Comments.css";
+import "../cssFiles/Comments.css";
 
 export default function Comment({ comment }) {
   const [upvote, setUpvote] = useState(comment.upvotes.length);
@@ -20,7 +21,9 @@ export default function Comment({ comment }) {
 
   useEffect(() => {
     const fetchUser = async () => {
-      const res = await axios.get(`/users?userId=${comment.userId}`);
+      const res = await axios.get(
+        `http://localhost:4000/comments?userId=${comment.userId}`
+      );
       setUser(res.data);
     };
     fetchUser();

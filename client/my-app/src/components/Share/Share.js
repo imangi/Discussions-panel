@@ -1,24 +1,26 @@
 import React from "react";
 import { useState, useContext } from "react";
 import axios from "axios";
-import { UserContext } from "../contexts/UserContext";
+import { UserContext } from "../../contexts/UserContext";
 
 import "./Share.css";
-import user from "../../../../src/models/user";
 
 export default function Share() {
-  const { user: currentUser } = useContext(UserContext);
+  const { user } = useContext(UserContext);
   const [comment, setComment] = useState("");
   const [error, setError] = useState(null);
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const commentData = { comment, currentUser };
+    const commentData = { comment, user };
 
-    const response = await axios.post("/api/comments" + user._id, {
-      body: JSON.stringify(commentData),
-      header: { "Content-Type": "application/json" },
-    });
+    const response = await axios.post(
+      "http://localhost:4000/comments" + user._id,
+      {
+        body: JSON.stringify(commentData),
+        header: { "Content-Type": "application/json" },
+      }
+    );
 
     const json = await response.json();
 

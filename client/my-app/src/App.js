@@ -1,7 +1,6 @@
 import "./App.css";
-import Share from "./components/Share";
-import All from "./components/All";
-
+import Share from "./components/Share/Share";
+import All from "./components/All/All";
 function App() {
   return (
     <div className="App">

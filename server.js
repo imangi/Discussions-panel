@@ -2,6 +2,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const initWebRoutes = require("./src/routes/web");
+const multer = require("multer");
 
 dotenv.config();
 
@@ -37,7 +38,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
-app.post("/api/upload", upload.single(file), (req, res) => {
+app.post("/api/upload", upload.single("file"), (req, res) => {
   try {
     return res.status(200).json("file saved");
   } catch (err) {

@@ -1,5 +1,5 @@
 import { createContext, useEffect, useReducer } from "react";
-import UserReducer from "./UserReducer";
+import { UserReducer } from "./UserReducer";
 
 const INITIAL_STATE = {
   user: JSON.parse(localStorage.getItem("user")) || null,
