@@ -1,10 +1,7 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
-
-const replyRoutes = require("./src/routes/Reply");
-const commentsRoutes = require("./src/routes/comments");
-const userRoutes = require("./src/routes/user");
+const initWebRoutes = require("./src/routes/web");
 
 dotenv.config();
 
@@ -23,10 +20,7 @@ mongoose
     console.log("error:" + err);
   });
 
-app.use(replyRoutes);
-
-app.use(userRoutes);
-app.use(commentsRoutes);
+initWebRoutes(app);
 
 /*app.get("/", (req, res) => {
   res.send("hello");

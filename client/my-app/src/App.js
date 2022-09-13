@@ -1,6 +1,6 @@
 import "./App.css";
 import Share from "./components/Share";
-import Comment from "./components/Comment";
+import All from "./components/All";
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
           <Share />
         </div>
         <div>
-          <Comment />
+          <All />
         </div>
       </body>
     </div>

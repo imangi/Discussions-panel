@@ -1,19 +1,22 @@
 import React from "react";
-import { useContext, useState, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { IoCaretUpSharp } from "react-icons/fa";
-import { AuthContext } from "../data/AuthContext";
 import axios from "axios";
+import { UserContext } from "../contexts/UserContext";
+
+//import All from "./All";
+
 import "Comments.css";
 
-export default function Comment() {
-  const [isVoted, setIsVoted] = useState(false);
+export default function Comment({ comment }) {
   const [upvote, setUpvote] = useState(comment.upvotes.length);
   const [user, setUser] = useState({});
-  const { user: currentUser } = useContext(AuthContext);
+  const { user: currentUser } = useContext(UserContext);
+  const { isVoted, setIsVoted } = useState(false);
 
   useEffect(() => {
-    setIsLiked(comment.upvotes.includes(currentUser._id));
-  }, [currentUser._id, comment.upvotes]);
+    setIsVoted(comment.upvotes.includes(currentUser._id));
+  }, [currentUser._id, comment.upvotes, setIsVoted]);
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -33,7 +36,6 @@ export default function Comment() {
       setIsVoted(!isVoted);
     }
   };
-
   return (
     <div className="comment">
       <div>
@@ -41,15 +43,13 @@ export default function Comment() {
       </div>
       <p className="username">${user.name}</p>
       <div>
-        <p className="text">${comment}</p>
+        <p className="text">${user.comment}</p>
       </div>
-      <div>
-        <div onClick={commentUpvotes}>
-          <IoCaretUpSharp className="icon" />
-          <p className="upvotes">upvotes</p>
-        </div>
-        <p className="reply">reply</p>
+      <div onClick={commentUpvotes}>
+        <IoCaretUpSharp className="icon" />
+        <p className="upvotes">upvotes</p>
       </div>
+      <p className="reply">reply</p>
     </div>
   );
 }
