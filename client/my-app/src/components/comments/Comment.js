@@ -1,13 +1,12 @@
 import React from "react";
 import { useContext, useEffect, useState } from "react";
-import { IoCaretUpSharp } from "react-icons/fa";
+//import { IoCaretUpSharp } from "react-icons/fa";
 import axios from "axios";
 import { UserContext } from "../../contexts/UserContext";
-import './Comments.css'
+import "./Comments.css";
+import { HiChevronUp } from "@heroicons/react/outline";
 
 //import All from "./All";
-
-import "../cssFiles/Comments.css";
 
 export default function Comment({ comment }) {
   const [upvote, setUpvote] = useState(comment.upvotes.length);
@@ -49,7 +48,7 @@ export default function Comment({ comment }) {
         <p className="text">${user.comment}</p>
       </div>
       <div onClick={commentUpvotes}>
-        <IoCaretUpSharp className="icon" />
+        <HiChevronUp className="icon" />
         <p className="upvotes">upvotes</p>
       </div>
       <p className="reply">reply</p>

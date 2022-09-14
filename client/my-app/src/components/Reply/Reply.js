@@ -1,6 +1,7 @@
 import React from "react";
 import { useContext, useEffect, useState } from "react";
-import { IoCaretUpSharp } from "react-icons/fa";
+import { HiChevronUp } from "@heroicons/react/outline";
+
 import axios from "axios";
 import { UserContext } from "../../contexts/UserContext";
 import "./Reply.css";
@@ -46,7 +47,7 @@ export default function Reply({ reply }) {
         <p className="text">{user.reply}</p>
       </div>
       <div>
-        <IoCaretUpSharp className="icon" />
+        <HiChevronUp className="icon" />
         <p className="upvotes">upvotes</p>
         <p className="reply" onClick={replyUpvotes}>
           reply
